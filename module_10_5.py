@@ -16,7 +16,7 @@ def read_info(name):
 
 filenames = [f'file {number}.txt' for number in range(1, 5)]
 
-# Линейный вызов
+#Линейный вызов
 # for name in filenames:
 #     read_info(name)
 # time_end = datetime.now()
@@ -27,7 +27,7 @@ filenames = [f'file {number}.txt' for number in range(1, 5)]
 if __name__ == "__main__":
 
     time_start = datetime.now()
-    with Pool() as pool:
+    with Pool(processes=4) as pool:
         res = pool.map(read_info, filenames)
 
     time_end = datetime.now()
